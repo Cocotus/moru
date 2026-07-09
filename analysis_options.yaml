@@ -1,0 +1,18 @@
+# Static analysis configuration.
+#
+# `flutter analyze` must pass clean. Riverpod-specific lints are provided by
+# riverpod_lint, which (since 3.1.0) runs as a native analyzer plugin — no
+# custom_lint runner is needed; its findings appear directly in the IDE and
+# in `flutter analyze`.
+
+include: package:flutter_lints/flutter.yaml
+
+plugins:
+  riverpod_lint: ^3.1.4
+
+linter:
+  rules:
+    # This template forbids print/debugPrint for app logging (use Talker via
+    # LoggerService instead); avoid_print is already part of flutter_lints.
+    # Add or disable additional rules here as your project evolves.
+    prefer_single_quotes: true

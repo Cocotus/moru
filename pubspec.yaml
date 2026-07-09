@@ -1,0 +1,98 @@
+name: flutter_template_appwrite
+description: >-
+  A production-ready Flutter starter template for Web, Windows and Linux:
+  Riverpod 3 (code generation + hooks), Freezed models, Appwrite Cloud
+  backend (auth + database), Talker logging with an in-app log view,
+  go_router shell navigation, Material 3 theming and en/de localization.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # Needed for usePathUrlStrategy() (clean web URLs without the # fragment).
+  flutter_web_plugins:
+    sdk: flutter
+
+  # State management: Riverpod 3 with code generation + hooks.
+  flutter_riverpod: ^3.3.2
+  hooks_riverpod: ^3.3.2
+  flutter_hooks: ^0.21.3
+  riverpod_annotation: ^4.0.3
+
+  # Immutable data models (generated with Freezed + json_serializable).
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.12.0
+
+  # Backend: Appwrite Cloud (auth + TablesDB).
+  appwrite: ^25.2.0
+
+  # Navigation.
+  go_router: ^17.3.0
+
+  # Opens external links (header/About/Help pages).
+  url_launcher: ^6.3.1
+
+  # Localization (version is pinned by flutter_localizations).
+  intl: ^0.20.2
+
+  # Logging: Talker core + Flutter UI (TalkerScreen) + Riverpod observer.
+  # talker_flutter is held at 5.1.16 because 5.1.17 pulls share_plus 13
+  # (win32 v6), which conflicts with package_info_plus 9.x (win32 v5).
+  talker_flutter: ^5.1.16
+  talker_riverpod_logger: ^5.1.16
+  # Cupertino icon font — TalkerScreen renders some CupertinoIcons glyphs.
+  cupertino_icons: ^1.0.8
+
+  # App/version info, local cache and secure storage.
+  # (appwrite 25.x caps package_info_plus below 10.0.0)
+  package_info_plus: ^9.0.0
+  shared_preferences: ^2.5.5
+  flutter_secure_storage: ^10.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code generation.
+  build_runner: ^2.15.0
+  riverpod_generator: ^4.0.4
+  freezed: ^3.2.5
+  json_serializable: ^6.14.0
+
+  # Lints. riverpod_lint 3.1+ is a native analyzer plugin (no custom_lint
+  # needed anymore); its rules surface through `flutter analyze`.
+  flutter_lints: ^6.0.0
+  riverpod_lint: ^3.1.4
+
+  # Generates launcher icons + web favicon from assets/images/logo.png.
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  # Enables generation of AppLocalizations from the ARB files in lib/l10n.
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+# Single-source icon generation: place a 1024x1024 PNG at
+# assets/images/logo.png and run `dart run flutter_launcher_icons`.
+# Note: Linux desktop icons are not covered by this tool; they are set up
+# at packaging time via a .desktop file (see README).
+flutter_launcher_icons:
+  image_path: assets/images/logo.png
+  web:
+    generate: true
+    image_path: assets/images/logo.png
+  windows:
+    generate: true
+    image_path: assets/images/logo.png
+    icon_size: 256
