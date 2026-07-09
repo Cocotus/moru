@@ -21,7 +21,10 @@ class AppTheme {
   const AppTheme._();
 
   /// The fallback seed color used before any user setting is known.
-  static const Color defaultSeedColor = Color(0xFF3D5AFE);
+  ///
+  /// A dark blood-crimson matching MoRPatcher's medieval-dark game theme
+  /// (the red gothic lettering of the Masters of Raana artwork).
+  static const Color defaultSeedColor = Color(0xFF8B1E2D);
 
   // The deep navy base that header + sidebar are built from. The user's
   // accent color is blended on top (see [brandSurface]).

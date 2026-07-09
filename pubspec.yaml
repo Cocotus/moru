@@ -1,9 +1,9 @@
 name: flutter_template_appwrite
 description: >-
-  A production-ready Flutter starter template for Web, Windows and Linux:
-  Riverpod 3 (code generation + hooks), Freezed models, Appwrite Cloud
-  backend (auth + database), Talker logging with an in-app log view,
-  go_router shell navigation, Material 3 theming and en/de localization.
+  MoRPatcher — a file-based HTML patcher for Masters of Raana, built on the
+  Flutter Appwrite starter template (Riverpod 3, Freezed models, Appwrite
+  auth, Talker logging, go_router shell navigation, Material 3 theming and
+  en/de localization) for Web, Windows and Linux.
 publish_to: 'none'
 version: 0.1.0+1
 
@@ -55,6 +55,11 @@ dependencies:
   shared_preferences: ^2.5.5
   flutter_secure_storage: ^10.3.1
 
+  # Patcher file handling: pick the config/HTML files (all platforms) and
+  # trigger browser downloads on web (package:web).
+  file_picker: ^11.0.2
+  web: ^1.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,6 +87,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    # Bundled default patcher configuration (config_morpatcher.json).
+    - assets/config/
 
 # Single-source icon generation: place a 1024x1024 PNG at
 # assets/images/logo.png and run `dart run flutter_launcher_icons`.

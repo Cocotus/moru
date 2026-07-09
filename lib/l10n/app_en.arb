@@ -1,13 +1,49 @@
 {
   "@@locale": "en",
 
-  "appTitle": "Flutter Appwrite Template",
+  "appTitle": "MoRPatcher",
   "@appTitle": {
     "description": "The application title shown in the header and on login"
   },
   "welcome": "Welcome",
   "home": "Home",
-  "homeIntro": "This is your empty starter home page. Explore Settings, Profile and the developer Logs view — then start building.",
+  "homeIntro": "Patch your Masters of Raana start_game.html: import a configuration, toggle the tweaks you want and download the patched file.",
+  "patcherConfigTitle": "Patcher configuration",
+  "importConfig": "Import config",
+  "loadDefaultConfig": "Load default",
+  "noConfigLoaded": "Import your config_morpatcher.json or load the bundled default configuration.",
+  "configRulesSummary": "{activeCount} of {totalCount} rules active",
+  "@configRulesSummary": {
+    "description": "Subtitle of the config file tile once a config is loaded",
+    "placeholders": {
+      "activeCount": {"type": "int"},
+      "totalCount": {"type": "int"}
+    }
+  },
+  "htmlFileTitle": "Game HTML file",
+  "chooseHtmlFile": "Choose HTML file",
+  "noHtmlLoaded": "Pick the game's start_game.html to patch.",
+  "patch": "Patch",
+  "downloadPatched": "Download patched HTML",
+  "backupConfig": "Backup config",
+  "patchRunSummary": "{appliedCount} of {activeCount} active rules applied",
+  "@patchRunSummary": {
+    "description": "Summary line shown after a patch run",
+    "placeholders": {
+      "appliedCount": {"type": "int"},
+      "activeCount": {"type": "int"}
+    }
+  },
+  "ruleReplacements": "{count, plural, one {1 replacement} other {{count} replacements}}",
+  "@ruleReplacements": {
+    "description": "Tooltip on a rule's success icon after a patch run",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ruleNotFound": "Search text not found",
+  "invalidConfigFile": "This file is not a valid patcher configuration",
+  "uncategorized": "General",
   "login": "Login",
   "logout": "Logout",
   "email": "Email",
@@ -15,7 +51,7 @@
   "settings": "Settings",
   "profile": "Profile",
   "about": "About",
-  "aboutDescription": "A starter template built with Riverpod 3, Freezed, go_router, Talker and Appwrite Cloud — for Web, Windows and Linux.",
+  "aboutDescription": "MoRPatcher patches the Masters of Raana start_game.html with configurable search & replace rules — built with Riverpod 3, Freezed, go_router, Talker and Appwrite Cloud for Web, Windows and Linux.",
   "help": "Help",
   "helpIntro": "This page is a prepared placeholder. Link your product documentation here or replace it with embedded help content.",
   "theme": "Theme",

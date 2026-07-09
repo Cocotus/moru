@@ -13,6 +13,7 @@ import 'package:flutter_template_appwrite/models/remote_log_entry.dart';
 import 'package:flutter_template_appwrite/models/user_settings.dart';
 import 'package:flutter_template_appwrite/services/auth_service.dart';
 import 'package:flutter_template_appwrite/services/database_service.dart';
+import 'package:flutter_template_appwrite/services/file_transfer_service.dart';
 
 /// Builds a minimal Appwrite [appwrite_models.User] for tests.
 appwrite_models.User buildFakeUser({
@@ -150,5 +151,50 @@ class FakeDatabaseService implements DatabaseService {
   @override
   Future<void> writeLogEntry(RemoteLogEntry entry) async {
     writtenLogEntries.add(entry);
+  }
+}
+
+/// A saved file recorded by [FakeFileTransferService.saveTextFile].
+class SavedTextFile {
+  /// Creates a [SavedTextFile].
+  const SavedTextFile({required this.fileName, required this.content});
+
+  /// The suggested file name of the save call.
+  final String fileName;
+
+  /// The content of the save call.
+  final String content;
+}
+
+/// A fake [FileTransferService] that serves queued files instead of opening
+/// pick dialogs, and records saves instead of writing to disk.
+class FakeFileTransferService implements FileTransferService {
+  /// Files returned by [pickTextFile], first-in-first-out. A `null` entry
+  /// simulates the user canceling the dialog.
+  final List<PickedTextFile?> filesToPick = <PickedTextFile?>[];
+
+  /// Every file passed to [saveTextFile].
+  final List<SavedTextFile> savedFiles = <SavedTextFile>[];
+
+  /// The value [saveTextFile] returns (false simulates a canceled dialog).
+  bool saveResult = true;
+
+  @override
+  Future<PickedTextFile?> pickTextFile({
+    required List<String> allowedExtensions,
+  }) async {
+    if (filesToPick.isEmpty) {
+      return null;
+    }
+    return filesToPick.removeAt(0);
+  }
+
+  @override
+  Future<bool> saveTextFile({
+    required String fileName,
+    required String content,
+  }) async {
+    savedFiles.add(SavedTextFile(fileName: fileName, content: content));
+    return saveResult;
   }
 }

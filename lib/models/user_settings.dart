@@ -31,8 +31,9 @@ abstract class UserSettings with _$UserSettings {
     /// The whole Material 3 palette is derived from this single color via
     /// `ColorScheme.fromSeed` (see `AppTheme`), for both light and dark mode.
     /// Stored as an int so it serializes cleanly to JSON / Appwrite; the
-    /// default matches the template's original blue seed.
-    @Default(0xFF3D5AFE) int accentColorValue,
+    /// default matches MoRPatcher's dark crimson seed
+    /// (`AppTheme.defaultSeedColor`).
+    @Default(0xFF8B1E2D) int accentColorValue,
 
     /// Whether developer mode is enabled.
     ///

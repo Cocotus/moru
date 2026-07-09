@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// The application title shown in the header and on login
   ///
   /// In en, this message translates to:
-  /// **'Flutter Appwrite Template'**
+  /// **'MoRPatcher'**
   String get appTitle;
 
   /// No description provided for @welcome.
@@ -119,8 +119,104 @@ abstract class AppLocalizations {
   /// No description provided for @homeIntro.
   ///
   /// In en, this message translates to:
-  /// **'This is your empty starter home page. Explore Settings, Profile and the developer Logs view — then start building.'**
+  /// **'Patch your Masters of Raana start_game.html: import a configuration, toggle the tweaks you want and download the patched file.'**
   String get homeIntro;
+
+  /// No description provided for @patcherConfigTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Patcher configuration'**
+  String get patcherConfigTitle;
+
+  /// No description provided for @importConfig.
+  ///
+  /// In en, this message translates to:
+  /// **'Import config'**
+  String get importConfig;
+
+  /// No description provided for @loadDefaultConfig.
+  ///
+  /// In en, this message translates to:
+  /// **'Load default'**
+  String get loadDefaultConfig;
+
+  /// No description provided for @noConfigLoaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Import your config_morpatcher.json or load the bundled default configuration.'**
+  String get noConfigLoaded;
+
+  /// Subtitle of the config file tile once a config is loaded
+  ///
+  /// In en, this message translates to:
+  /// **'{activeCount} of {totalCount} rules active'**
+  String configRulesSummary(int activeCount, int totalCount);
+
+  /// No description provided for @htmlFileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Game HTML file'**
+  String get htmlFileTitle;
+
+  /// No description provided for @chooseHtmlFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose HTML file'**
+  String get chooseHtmlFile;
+
+  /// No description provided for @noHtmlLoaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick the game\'s start_game.html to patch.'**
+  String get noHtmlLoaded;
+
+  /// No description provided for @patch.
+  ///
+  /// In en, this message translates to:
+  /// **'Patch'**
+  String get patch;
+
+  /// No description provided for @downloadPatched.
+  ///
+  /// In en, this message translates to:
+  /// **'Download patched HTML'**
+  String get downloadPatched;
+
+  /// No description provided for @backupConfig.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup config'**
+  String get backupConfig;
+
+  /// Summary line shown after a patch run
+  ///
+  /// In en, this message translates to:
+  /// **'{appliedCount} of {activeCount} active rules applied'**
+  String patchRunSummary(int appliedCount, int activeCount);
+
+  /// Tooltip on a rule's success icon after a patch run
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {1 replacement} other {{count} replacements}}'**
+  String ruleReplacements(int count);
+
+  /// No description provided for @ruleNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Search text not found'**
+  String get ruleNotFound;
+
+  /// No description provided for @invalidConfigFile.
+  ///
+  /// In en, this message translates to:
+  /// **'This file is not a valid patcher configuration'**
+  String get invalidConfigFile;
+
+  /// No description provided for @uncategorized.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get uncategorized;
 
   /// No description provided for @login.
   ///
@@ -167,7 +263,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutDescription.
   ///
   /// In en, this message translates to:
-  /// **'A starter template built with Riverpod 3, Freezed, go_router, Talker and Appwrite Cloud — for Web, Windows and Linux.'**
+  /// **'MoRPatcher patches the Masters of Raana start_game.html with configurable search & replace rules — built with Riverpod 3, Freezed, go_router, Talker and Appwrite Cloud for Web, Windows and Linux.'**
   String get aboutDescription;
 
   /// No description provided for @help.

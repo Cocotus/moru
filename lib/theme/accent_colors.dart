@@ -25,6 +25,9 @@ class AccentColor {
 /// the app needs to change. The first entry's color also serves as the
 /// app-wide default seed (see `AppTheme.defaultSeedColor`).
 const List<AccentColor> accentColorPresets = <AccentColor>[
+  // MoRPatcher's default: a dark blood-crimson fitting the medieval-dark
+  // look of Masters of Raana (see AppTheme.defaultSeedColor).
+  AccentColor(name: 'Crimson', color: Color(0xFF8B1E2D)),
   AccentColor(name: 'Blue', color: Color(0xFF3D5AFE)),
   AccentColor(name: 'Light Blue', color: Color(0xFF0288D1)),
   AccentColor(name: 'Cyan', color: Color(0xFF0097A7)),

@@ -12,7 +12,7 @@ _UserSettings _$UserSettingsFromJson(Map<String, dynamic> json) =>
       languageCode: json['languageCode'] as String? ?? 'en',
       sidebarCollapsed: json['sidebarCollapsed'] as bool? ?? false,
       accentColorValue:
-          (json['accentColorValue'] as num?)?.toInt() ?? 0xFF3D5AFE,
+          (json['accentColorValue'] as num?)?.toInt() ?? 0xFF8B1E2D,
       developerMode: json['developerMode'] as bool? ?? false,
       displayName: json['displayName'] as String? ?? '',
     );

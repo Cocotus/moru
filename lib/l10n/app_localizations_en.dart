@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Flutter Appwrite Template';
+  String get appTitle => 'MoRPatcher';
 
   @override
   String get welcome => 'Welcome';
@@ -19,7 +19,69 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeIntro =>
-      'This is your empty starter home page. Explore Settings, Profile and the developer Logs view — then start building.';
+      'Patch your Masters of Raana start_game.html: import a configuration, toggle the tweaks you want and download the patched file.';
+
+  @override
+  String get patcherConfigTitle => 'Patcher configuration';
+
+  @override
+  String get importConfig => 'Import config';
+
+  @override
+  String get loadDefaultConfig => 'Load default';
+
+  @override
+  String get noConfigLoaded =>
+      'Import your config_morpatcher.json or load the bundled default configuration.';
+
+  @override
+  String configRulesSummary(int activeCount, int totalCount) {
+    return '$activeCount of $totalCount rules active';
+  }
+
+  @override
+  String get htmlFileTitle => 'Game HTML file';
+
+  @override
+  String get chooseHtmlFile => 'Choose HTML file';
+
+  @override
+  String get noHtmlLoaded => 'Pick the game\'s start_game.html to patch.';
+
+  @override
+  String get patch => 'Patch';
+
+  @override
+  String get downloadPatched => 'Download patched HTML';
+
+  @override
+  String get backupConfig => 'Backup config';
+
+  @override
+  String patchRunSummary(int appliedCount, int activeCount) {
+    return '$appliedCount of $activeCount active rules applied';
+  }
+
+  @override
+  String ruleReplacements(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count replacements',
+      one: '1 replacement',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get ruleNotFound => 'Search text not found';
+
+  @override
+  String get invalidConfigFile =>
+      'This file is not a valid patcher configuration';
+
+  @override
+  String get uncategorized => 'General';
 
   @override
   String get login => 'Login';
@@ -44,7 +106,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutDescription =>
-      'A starter template built with Riverpod 3, Freezed, go_router, Talker and Appwrite Cloud — for Web, Windows and Linux.';
+      'MoRPatcher patches the Masters of Raana start_game.html with configurable search & replace rules — built with Riverpod 3, Freezed, go_router, Talker and Appwrite Cloud for Web, Windows and Linux.';
 
   @override
   String get help => 'Help';

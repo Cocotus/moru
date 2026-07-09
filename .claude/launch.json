@@ -4,7 +4,7 @@
     {
       "name": "web",
       "runtimeExecutable": "flutter",
-      "runtimeArgs": ["run", "-d", "web-server", "--web-port", "5317"],
+      "runtimeArgs": ["run", "-d", "web-server", "--web-port", "5317", "--dart-define-from-file=config/app_config.json"],
       "port": 5317
     }
   ]
